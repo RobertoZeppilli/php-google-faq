@@ -1,0 +1,41 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* common */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 30px;
+}
+
+.container {
+    max-width: 1030px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #3367d6;
+}
+
+/* faq sections */
+.faq {
+    margin-bottom: 80px;
+}
+.faq > h2,
+.faq li,
+.faq p {
+    margin-bottom: 20px;
+}
+
+/* ordered lists style */
+.type-a {
+    margin-top: 20px;
+    padding-left: 40px;
+}
+.list {
+    padding-left: 17px;
+}
