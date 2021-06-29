@@ -45,12 +45,10 @@
             ]
         ], 
         [
-            "domanda" => "Stabilire il paese associato al tuo account",
+            "domanda" => "<span class='small'>Stabilire il paese associato al tuo account</span>",
             "risposta" => [
                 "Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell'ultimo anno.",
-
                 "I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno per aggiornare l'associazione del paese.",
-
                 "Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. <a href='#'>Contattaci <i class='fas fa-external-link-alt'></i></a> se ritieni che il paese associato al tuo account sia sbagliato."
             ]
         ], 
@@ -66,7 +64,38 @@
                 "In alcuni casi sì. Quando fai clic su un risultato della Ricerca Google, il tuo browser web potrebbe reindirizzare alla pagina web di destinazione anche l'indirizzo Internet, o URL, della pagina dei risultati di ricerca sotto forma di <a href='#'>URL referrer</a>. Talvolta, l'URL della pagina dei risultati di ricerca potrebbe contenere la query di ricerca che hai inserito. Se utilizzi la ricerca SSL (la funzione di ricerca criptata di Google), nella maggior parte dei casi i termini di ricerca non vengono inviati come parte dell'URL negli URL referrer. Questo comportamento può fare eccezione, ad esempio se utilizzi alcuni browser meno diffusi. Ulteriori informazioni sulla ricerca SSL sono disponibili <a href='#'>qui</a>. Le query di ricerca o le informazioni contenute nell'URL referrer potrebbero essere disponibili mediante Google Analytics o un'API (Application Programming Interface). Inoltre, gli inserzionisti potrebbero ricevere informazioni relative all' esatte parole chiave che hanno determinato il clic su un annuncio."
             ]
         ]
+    ];
+
+    $links = [
+        "<a href='#introduzione'>Introduzione</a>",
+        "<a href='#norme-sulla-privacy'>Norme sulla privacy</a>",
+        "<a href='#termini-di-servizio'>Termini di servizio</a>",
+        "<a href='#tecnologie'>Tecnologie</a>",
+        "<a class='active' href='domande-frequenti'>Domande frequenti</a>"
+    ];
+
+    $footerLinks = [
+        "<a href='google'>Google</a>",
+        "<a href='tutto-su-google'>Tutto su Google</a>",
+        "<a href='privacy'>Privacy</a>",
+        "<a href='#termini'>Termini</a>",
+    ];
+
+    $languages = [
+        "Italiano",
+        "Inglese",
+        "Francese",
+        "Tedesco",
+        "Spagnolo",
+        "Olandese",
+        "Norvegese",
+        "Svedese",
+        "Portoghese",
+        "Cinese",
+        "Giapponese"
     ]
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -83,6 +112,33 @@
     <title>Google Faqs</title>
 </head>
 <body>
+    <!-- header -->
+    <header>
+        <div class="logo">
+            <h1>
+                <span class="blue">G</span>
+                <span class="red">o</span>
+                <span class="yellow">o</span>
+                <span class="blue">g</span>
+                <span class="green">l</span>
+                <span class="red">e</span>
+            </h1>
+            <span class="current">Privacy e termini</span>
+        </div>
+        <nav>
+            <ul>
+                <?php
+                foreach($links as $link) {
+                ?>
+                <li><?= $link ?></li>
+                <?php   
+                }
+                ?> 
+            </ul>
+        </nav>
+    </header>
+    <!-- /header -->
+    <!-- main -->
     <main>
         <div class="container">
             <?php 
@@ -103,5 +159,35 @@
             ?>
         </div>
     </main>
+    <!-- /main -->
+    <!-- footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-links">
+                <ul>
+                    <?php
+                    foreach($footerLinks as $footerLink) {
+                    ?>
+                    <li><?= $footerLink ?></li>
+                    <?php   
+                    }
+                    ?> 
+                </ul>
+            </div>
+            <div class="select-language">
+                <img src="img/index.png" alt="index">
+                <select>
+                    <?php
+                    foreach($languages as $language) {
+                    ?>
+                    <option><?= $language ?></option>
+                    <?php   
+                    }
+                    ?> 
+                </select>
+            </div>
+        </div>
+    </footer>
+    <!-- /footer -->
 </body>
 </html>
